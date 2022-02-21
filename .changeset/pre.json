@@ -1,0 +1,13 @@
+{
+  "mode": "pre",
+  "tag": "alpha",
+  "initialVersions": {
+    "@axiajs/solana.core": "0.0.0",
+    "@axiajs/solana.react": "0.0.0",
+    "@axiajs/solana.vue": "0.0.0",
+    "@axiajs/utils": "0.0.0"
+  },
+  "changesets": [
+    "yellow-rabbits-divide"
+  ]
+}
