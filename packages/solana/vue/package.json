@@ -9,8 +9,8 @@
   "author": "Jonathan Bakebwa <codebender828@gmail.com>",
   "homepage": "https://github.com/codebender828/axiajs#readme",
   "license": "MIT",
-  "main": "dist/axiajs-solana-vue.cjs.js",
-  "module": "dist/axiajs-solana-vue.esm.js",
+  "main": "dist/axiajs-solana.vue.cjs.js",
+  "module": "dist/axiajs-solana.vue.esm.js",
   "repository": "https://github.com/codebender828/axiajs/tree/main/packages/solana/vue",
   "sideEffects": false,
   "files": [
@@ -23,7 +23,8 @@
     "url": "https://github.com/codebender828/axiajs/issues"
   },
   "scripts": {
-    "clean": "rimraf dist"
+    "clean": "rimraf dist",
+    "link": "yarn link"
   },
   "dependencies": {
     "@axiajs/solana.core": "0.0.0"
