@@ -1,5 +1,5 @@
-import { hello } from '@axiajs/core';
+import { core } from '@axiajs/solana.core';
 
 console.log({
-  hello,
+  core,
 });
