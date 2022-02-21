@@ -1,6 +1,6 @@
 {
   "name": "@axiajs/solana.vue",
-  "version": "0.1.0-alpha.0",
+  "version": "0.1.0-alpha.1",
   "description": "Vue composables for Mirage SDK",
   "keywords": [
     "mirage",
