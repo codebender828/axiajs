@@ -1,0 +1,28 @@
+{
+  "name": "@axiajs/solana.core",
+  "version": "0.0.0",
+  "description": "Vanilla library for Mirage SDK",
+  "keywords": [
+    "mirage",
+    "vanilla"
+  ],
+  "author": "Jonathan Bakebwa <codebender828@gmail.com>",
+  "homepage": "https://github.com/codebender828/axiajs#readme",
+  "license": "MIT",
+  "main": "dist/axiajs-solana-core.cjs.js",
+  "module": "dist/axiajs-solana-core.esm.js",
+  "repository": "https://github.com/codebender828/axiajs/tree/main/packages/solana/vanilla",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "bugs": {
+    "url": "https://github.com/codebender828/axiajs/issues"
+  },
+  "scripts": {
+    "clean": "rimraf dist"
+  }
+}

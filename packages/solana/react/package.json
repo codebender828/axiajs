@@ -1,0 +1,37 @@
+{
+  "name": "@axiajs/solana.react",
+  "version": "0.0.0",
+  "description": "React hooks for Mirage SDK",
+  "keywords": [
+    "mirage",
+    "react"
+  ],
+  "author": "Jonathan Bakebwa <codebender828@gmail.com>",
+  "homepage": "https://github.com/codebender828/axiajs#readme",
+  "license": "MIT",
+  "main": "dist/axiajs-solana-react.cjs.js",
+  "module": "dist/axiajs-solana-react.esm.js",
+  "repository": "https://github.com/codebender828/axiajs/tree/main/packages/solana/react",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "bugs": {
+    "url": "ttps://github.com/codebender828/axiajs/issues"
+  },
+  "scripts": {
+    "clean": "rimraf dist"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.18",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.6",
+    "react-dom": ">=16.8.6"
+  }
+}
