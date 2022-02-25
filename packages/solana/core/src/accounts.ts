@@ -7,12 +7,10 @@ import {
   cache,
   TokenAccount,
   programIds,
-} from '@axiajs/solana.utils';
-import { AccountLayout } from '@solana/spl-token';
-import {
   TokenAccountParser,
   MintParser,
-} from '../../utils/src/actions/parsesrs';
+} from '@axiajs/solana.utils';
+import { AccountLayout } from '@solana/spl-token';
 
 const PRECACHED_OWNERS = new Set<string>();
 

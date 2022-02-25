@@ -20,23 +20,34 @@ export function useAccount(
 ) {
   const connection = useConnection();
   const nfts = computed({
-    get: () => tokenCache.value.get(publicKey.value),
+    get: () => tokenCache.value.get(publicKey.value)!,
     set(val) {
       tokenCache.value.set(publicKey.value, val!);
     },
   });
 
   async function syncNfts(pk: StringPublicKey) {
-    return getParsedNftAccountsByOwner({
-      publicAddress: publicKey.value,
+    const nfts = await getParsedNftAccountsByOwner({
+      publicAddress: pk,
       connection: connection.value,
     });
+
+    const nftsWithMetadataPromises = nfts?.map?.(async (n: any) => {
+      const nft = {
+        ...n,
+        metadata: await fetchMetadata(n.data.uri).catch((e) =>
+          console.error(e)
+        ),
+      };
+      return nft;
+    });
+    const nftsWithMetadata = await Promise.all(nftsWithMetadataPromises!);
+    return nftsWithMetadata;
   }
 
   watchEffect(async () => {
     if (!tokenCache.value.get(publicKey.value)) {
-      const userNfts = await syncNfts(publicKey.value);
-      nfts.value = userNfts;
+      nfts.value = await syncNfts(publicKey.value);
     }
   });
 
@@ -44,4 +55,14 @@ export function useAccount(
     nfts,
     syncNfts,
   };
+}
+
+async function fetchMetadata(uri: string) {
+  // const { data: metadata } = await axios(uri)
+  const metadata = await fetch(uri, {
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  }).then((res) => res.json());
+  return metadata;
 }

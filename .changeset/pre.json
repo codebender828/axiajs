@@ -5,9 +5,12 @@
     "@axiajs/solana.core": "0.0.0",
     "@axiajs/solana.react": "0.0.0",
     "@axiajs/solana.vue": "0.0.0",
-    "@axiajs/utils": "0.0.0"
+    "@axiajs/utils": "0.0.0",
+    "@axiajs/solana.metaplex": "0.0.0",
+    "@axiajs/solana.utils": "0.0.0"
   },
   "changesets": [
+    "angry-items-try",
     "chilled-singers-impress",
     "yellow-rabbits-divide"
   ]
