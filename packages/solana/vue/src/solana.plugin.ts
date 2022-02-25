@@ -3,6 +3,8 @@ import {
   ConnectionInjectionKey,
   initializeConnection,
   SolanaNetworks,
+  initializeWallet,
+  WalletInjectionKey,
 } from './composables';
 
 export interface AxiaSolanaPluginOptions {
@@ -14,6 +16,9 @@ const AxiaSolanaPlugin: Plugin = {
     // Create new connection instance
     const connection = initializeConnection(options.network);
     app.provide(ConnectionInjectionKey, connection);
+
+    const ctx = initializeWallet();
+    app.provide(WalletInjectionKey, ctx);
   },
 };
 

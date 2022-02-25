@@ -1,0 +1,46 @@
+{
+  "name": "@axiajs/solana.metaplex",
+  "version": "0.0.0",
+  "description": "Mirage SDK Metaplex utils",
+  "keywords": [
+    "mirage",
+    "solana",
+    "marketplace",
+    "metaplex",
+    "core",
+    "sdk"
+  ],
+  "author": "Jonathan Bakebwa <codebender828@gmail.com>",
+  "homepage": "https://github.com/codebender828/axiajs#readme",
+  "license": "MIT",
+  "main": "dist/axiajs-solana.metaplex.cjs.js",
+  "module": "dist/axiajs-solana.metaplex.esm.js",
+  "repository": "https://github.com/codebender828/axiajs/tree/main/packages/utils",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "preconstruct": {
+    "entrypoints": [
+      "index.ts"
+    ]
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "bugs": {
+    "url": "https://github.com/codebender828/axiajs/issues"
+  },
+  "scripts": {
+    "clean": "rimraf dist",
+    "link": "yarn link"
+  },
+  "dependencies": {
+    "@metaplex-foundation/mpl-core": "^0.0.4",
+    "@metaplex-foundation/mpl-token-metadata": "^1.2.4",
+    "@solana/spl-token": "0.1.6",
+    "@solana/web3.js": "^1.35.0",
+    "bn.js": "^5.2.0",
+    "bs58": "^5.0.0"
+  }
+}

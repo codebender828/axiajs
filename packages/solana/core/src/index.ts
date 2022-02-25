@@ -1,6 +1,5 @@
-export const core = (a: number, b: number): number => {
-  if ('development' === process.env.NODE_ENV) {
-    console.log('vanilla');
-  }
-  return a + b;
-};
+export * from '@solana/wallet-adapter-wallets';
+export * from '@axiajs/solana.utils';
+
+export * from './accounts';
+export * from './queries';
