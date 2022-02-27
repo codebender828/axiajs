@@ -2,15 +2,14 @@ import { Connection, PublicKey } from '@solana/web3.js';
 import {
   StringPublicKey,
   toPublicKey,
-  decodeMetadata,
   deserializeAccount,
   cache,
   TokenAccount,
   programIds,
   TokenAccountParser,
-  MintParser,
 } from '@axiajs/solana.utils';
 import { AccountLayout } from '@solana/spl-token';
+import { emitter } from './emitter';
 
 const PRECACHED_OWNERS = new Set<string>();
 
@@ -72,9 +71,10 @@ export async function subscribeToUserTokenAccounts<
       if (info.accountInfo.data.length === AccountLayout.span) {
         const data = deserializeAccount(info.accountInfo.data);
 
-        if (PRECACHED_OWNERS.has(data.owner.toBase58())) {
+        if (!PRECACHED_OWNERS.has(data.owner.toBase58())) {
           const parsed = cache.add(id, info.accountInfo, TokenAccountParser);
           console.log('TokenAccount', parsed);
+          emitter.emit('token-added', parsed!);
         }
       }
     },

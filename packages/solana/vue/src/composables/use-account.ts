@@ -2,16 +2,18 @@ import { computed, ComputedRef, ref, Ref, watchEffect } from 'vue';
 import {
   StringPublicKey,
   getParsedNftAccountsByOwner,
+  IMetadata,
 } from '@axiajs/solana.core';
 import { useConnection } from './use-connection';
-import { Metadata } from '../../../core/src/queries/config';
 
 type Awaited<T> = T extends PromiseLike<infer U> ? U : T;
 
 const tokenCache = ref(
   new Map<
     StringPublicKey,
-    Awaited<ReturnType<typeof getParsedNftAccountsByOwner>>
+    Awaited<
+      ReturnType<typeof getParsedNftAccountsByOwner> & { metadata: IMetadata }
+    >
   >()
 );
 
@@ -50,6 +52,8 @@ export function useAccount(
       nfts.value = await syncNfts(publicKey.value);
     }
   });
+
+  // TODO: Subscribe to token account changes on client
 
   return {
     nfts,

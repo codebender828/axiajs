@@ -61,3 +61,17 @@ export const isValidSolanaAddress = (address: string) => {
 
 export const decodeTokenMetadata = async (buffer: Buffer) =>
   deserializeUnchecked(METADATA_SCHEMA, Metadata, buffer);
+
+/** Standard Metadata standard to be returned by an NFT's token URI */
+export interface IMetadata {
+  description: string;
+  external_url: string;
+  image: string;
+  name: string;
+  attributes?: AttributesEntity[] | null;
+}
+export interface AttributesEntity {
+  trait_type: string;
+  value: string | number;
+  display_type?: string | null;
+}
