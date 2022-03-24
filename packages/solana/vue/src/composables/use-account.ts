@@ -20,7 +20,7 @@ const tokenCache = ref(
 export function useAccount(
   publicKey: Ref<StringPublicKey> | ComputedRef<StringPublicKey>
 ) {
-  const connection = useConnection();
+  const { connection } = useConnection();
   const nfts = computed({
     get: () => tokenCache.value.get(publicKey.value)!,
     set(val) {

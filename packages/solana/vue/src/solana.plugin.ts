@@ -11,11 +11,16 @@ export interface AxiaSolanaPluginOptions {
   network: SolanaNetworks;
 }
 
+export { SolanaNetworks };
+
 const AxiaSolanaPlugin: Plugin = {
   install(app: App, options: AxiaSolanaPluginOptions) {
     // Create new connection instance
-    const connection = initializeConnection(options.network);
-    app.provide(ConnectionInjectionKey, connection);
+    const { connection, endpoint } = initializeConnection(options.network)!;
+    app.provide(ConnectionInjectionKey, {
+      connection,
+      endpoint,
+    });
 
     const ctx = initializeWallet();
     app.provide(WalletInjectionKey, ctx);

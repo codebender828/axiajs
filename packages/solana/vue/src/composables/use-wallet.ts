@@ -22,8 +22,6 @@ const [WalletContextProvider, _useWallet, WalletInjectionKey] =
 
 export function initializeWallet() {
   try {
-    const adapters = getWalletAdapters();
-    console.log(adapters);
     const adapter = new PhantomWalletAdapter();
     const wallet = computed(() => adapter);
     const ctx = {
