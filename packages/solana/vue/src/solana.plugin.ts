@@ -9,12 +9,19 @@ import {
 
 export interface AxiaSolanaPluginOptions {
   network: SolanaNetworks;
+  autoConnect?: boolean;
 }
 
 export { SolanaNetworks };
 
+const DEFAULT_OPTIONS: AxiaSolanaPluginOptions = {
+  autoConnect: true,
+  network: SolanaNetworks.devnet,
+};
+
 const AxiaSolanaPlugin: Plugin = {
-  install(app: App, options: AxiaSolanaPluginOptions) {
+  install(app: App, _options: AxiaSolanaPluginOptions) {
+    const options = Object.assign(DEFAULT_OPTIONS, _options);
     // Create new connection instance
     const { connection, endpoint } = initializeConnection(options.network)!;
     app.provide(ConnectionInjectionKey, {
@@ -23,6 +30,11 @@ const AxiaSolanaPlugin: Plugin = {
     });
 
     const ctx = initializeWallet();
+    if (options.autoConnect) {
+      ctx?.wallet.value.on('readyStateChange', async () => {
+        await ctx.wallet.value.connect();
+      });
+    }
     app.provide(WalletInjectionKey, ctx);
   },
 };
