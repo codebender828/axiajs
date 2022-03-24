@@ -1,6 +1,6 @@
 {
   "name": "@axiajs/solana.vue",
-  "version": "0.1.0-alpha.3",
+  "version": "0.1.0-alpha.4",
   "description": "Vue composables for Mirage SDK",
   "keywords": [
     "mirage",
@@ -27,7 +27,7 @@
     "link": "yarn link"
   },
   "dependencies": {
-    "@axiajs/solana.core": "0.1.0-alpha.1",
+    "@axiajs/solana.core": "0.1.0-alpha.2",
     "@solana/web3.js": "^1.35.1"
   },
   "devDependencies": {

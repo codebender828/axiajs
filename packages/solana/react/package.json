@@ -1,6 +1,6 @@
 {
   "name": "@axiajs/solana.react",
-  "version": "0.0.0",
+  "version": "0.1.0-alpha.0",
   "description": "React hooks for Mirage SDK",
   "keywords": [
     "mirage",

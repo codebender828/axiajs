@@ -1,5 +1,16 @@
 # @axiajs/solana.core
 
+## 0.1.0-alpha.2
+
+### Minor Changes
+
+- include options for auto connection
+
+### Patch Changes
+
+- Updated dependencies
+  - @axiajs/solana.utils@0.1.0-alpha.2
+
 ## 0.1.0-alpha.1
 
 ### Patch Changes

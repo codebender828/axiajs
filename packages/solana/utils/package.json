@@ -1,6 +1,6 @@
 {
   "name": "@axiajs/solana.utils",
-  "version": "0.1.0-alpha.1",
+  "version": "0.1.0-alpha.2",
   "description": "Mirage SDK Core",
   "keywords": [
     "mirage",
@@ -36,7 +36,7 @@
     "link": "yarn link"
   },
   "dependencies": {
-    "@axiajs/solana.metaplex": "0.0.0",
+    "@axiajs/solana.metaplex": "0.1.0-alpha.0",
     "@metaplex/arweave-cost": "^2.0.0",
     "@solana/spl-token": "0.1.6",
     "@solana/spl-token-registry": "^0.2.2373",

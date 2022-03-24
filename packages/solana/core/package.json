@@ -1,6 +1,6 @@
 {
   "name": "@axiajs/solana.core",
-  "version": "0.1.0-alpha.1",
+  "version": "0.1.0-alpha.2",
   "description": "Vanilla library for Mirage SDK",
   "keywords": [
     "mirage",
@@ -27,7 +27,7 @@
     "link": "yarn link"
   },
   "dependencies": {
-    "@axiajs/solana.utils": "0.1.0-alpha.1",
+    "@axiajs/solana.utils": "0.1.0-alpha.2",
     "@solana/spl-token": "0.1.6",
     "@solana/wallet-adapter-wallets": "^0.15.4",
     "@solana/web3.js": "^1.35.1",
